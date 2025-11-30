@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" name="viewport" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+  <title>03-12-2025</title>
+  <meta name="description" content="A special birthday greeting" />
+</head>
+
+<body style="background: linear-gradient(to bottom, #ffe1e1, #ff217de0), url(./r.jpg);height: 100vh;">
+  <audio src="./y2mate (mp3cut.net).mp3" id="linkmp3" class="sembunyi"></audio>
+
+  <div id="bodyblur">
+    <img src="" id="wallpaper" />
+  </div>
+
+  <div id="Content">
+    <div id="kadoIn">
+      <img src="./Valentine-Surprise.png" alt="Open Gift Button" />
+    </div>
+    <p id="ket"><span style="font-style: italic; color: rgb(0,0,0); margin-top: 3px !important;">hii, di buka yaa!!</span></p>
+
+    <div class="kumpulanstiker" style="margin-top: 95px;">
+      <img src="https://media.tenor.com/4Ijycn6xFzUAAAAj/mochi-blue-roses.gif" id="fotostiker" />
+      <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker1" />
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2" />
+      <img src="https://media.tenor.com/snFoLI-S9CQAAAAj/milk-and-mocha.gif" id="fotostiker3" />
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker4" />
+      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker5" />
+    </div>
+
+    <p id="halo" class="halo"></p>
+
+    <div>
+      <blockquote id="bq" data-text="💞">
+
+        <p id="kalimat">Hari ini hari kamu. Aku senang banget bisa tetap ada sampai sekarang.</p>
+
+        <p id="pesan1">tap di siniii</p>
+        <div id="kolombaru">
+          <li id="lv1">🎂</li>
+          <li id="lv2">🎁</li>
+          <li id="lv3">🥳</li>
+          <li id="lv4">💖</li>
+        </div>
+
+        <p id="pesan2">Dari 2016 sampai sekarang… kamu tetap jadi orang yang berarti buat aku.</p>
+        <p id="pesan3">Tau nggak apa yang bikin hari ini spesial?</p>
+        <p id="pesan4" class="sty2">Karena kamu ada di dunia ini.</p>
+        <p id="pesan5" class="sty2">Aku cuma berharap yang baik-baik selalu nyamperin kamu tahun ini.</p>
+        <p id="pesan6" class="sty2">Maafin aku yang redflag ini yaa hehe, aku sayang kamu.</p>
+
+        <p id="opsL">Tap lagii ya untuk lanjut :)</p>
+      </blockquote>
+    </div>
+
+    <div id="Tombol"><a id="By">📨 Next</a></div>
+
+    <div id="pesanditolak">
+      <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif" />
+      <p id="kataditolak">Hei, jangan skip dulu… ada yang mau aku bilang.</p>
+    </div>
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const swalst = Swal.mixin({timer: 2300,allowOutsideClick: false,showConfirmButton: false,timerProgressBar: true,imageHeight: 90,});
+    audio = new Audio(linkmp3.src);
+    fungsiAwal = 0;
+    deffotostiker = fotostiker.src;
+    Content.style = "opacity:1;margin-top:16vh";
+    const swals = Swal.mixin({allowOutsideClick: false,cancelButtonColor: "#FF0040",imageHeight: 80,});
+
+    document.getElementById("kadoIn").onclick = function () {
+      if (fungsiAwal == 0) {
+        audio.play();fungsiAwal = 1;
+        kadoIn.style = "transition:all .8s ease;transform:scale(10);opacity:0";
+        wallpaper.style = "transform: scale(1.5);";
+        ket.style = "display:none";
+        setTimeout(initengahan, 300);
+        setTimeout(inipesan, 500);
+      }
+    };
+
+    async function inipesan() {
+      var { value: nama } = await swals.fire({title: "sebelum lanjut, mau dipanggil Liyaa atau sayang?",input: "text",});
+      if (nama && nama.length < 11) {
+        window.nama = nama;
+        vketikhalo = "Selamat ulang tahun, " + nama + "!";
+        mulainama();
+      } else {
+        await Swal.fire({title: "Namanya kepanjangan nih",text: "Coba yang lebih pendek ya",icon: "warning",});inipesan();
+      }
+    }
+
+    var tanya = "aku ada sesuatu nih, mau lihat gaaa?";
+    var opstanya = "Pilih salah satu:";
+    var tompositif = "mauuu";
+    var tomnegatif = "gamauu";
+
+    async function pertanyaan() {
+      var { isConfirmed: prtanya } = await swals.fire({title: nama + ", " + tanya,text: opstanya,imageUrl: fotostiker5.src,showCancelButton: true,confirmButtonText: tompositif,cancelButtonText: tomnegatif,});
+      if (prtanya) {
+        pesanwhatsapp = "Ayo kita lanjutin 🎉";
+        menuju();
+      } else {
+        pesanwhatsapp = nama + ", jangan pergi dulu dong :(";
+        await swalst.fire({title: kataditolak.innerHTML,timer: 2000,imageUrl: stikerditolak.src,});
+        menuju();
+      }
+    }
+  </script>
+  <script src="a.js"></script>
+</body>
+</html>
